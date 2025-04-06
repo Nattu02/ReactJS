@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 const heading = React.createElement("h1", {id:"heading"}, "Hello world from React!");
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -8,15 +11,15 @@ console.log(heading); //  => this is an object
 
 const parent = React.createElement("div", {id: "parent"}, 
     [
-        React.createElement("div", {id: "child"}, 
+        React.createElement("div", {id: "child", key: "d1"}, 
         [
-            React.createElement("h1", {id: "head"}, "Heading 1 inside child!!"),
-            React.createElement("h2", {id: "subhead"}, "Sub heading 1 inside child!!")
+            React.createElement("h1", {id: "head", key: "h1"}, "Heading 1 inside child!!"),
+            React.createElement("h2", {id: "subhead", key: "sh1"}, "Sub heading 1 inside child!!")
         ]), 
-        React.createElement("div", {id: "child2"}, 
+        React.createElement("div", {id: "child2", key: "d2"}, 
         [
-            React.createElement("h1", {id: "head2"}, "Heading 2 inside child!!"),
-            React.createElement("h2", {id: "subhead2"}, "Sub heading 2 inside child!!")
+            React.createElement("h1", {id: "head2", key: "h2"}, "Heading 2 inside child!!"),
+            React.createElement("h2", {id: "subhead2", key: "sh2"}, "Sub heading 2 inside child!!")
         ]) 
 
 ]
