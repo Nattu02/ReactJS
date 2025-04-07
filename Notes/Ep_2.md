@@ -28,4 +28,14 @@ package-lock.json -> Contains the specific versions of all the dependencies and 
  - Error handling
  
 
+- To build our app using parcel use the command "npx parcel index.html"
+
+This will host our app in a local development server. 
+Parcel will compress the codes and store them in dist and parcel-cache folders. 
+React can also be inserted to the HTML page using imports, without using CDN links. MOreover, CDN links are not recommended and npm is always preferred eway. 
+dist and .parcel-cache folders are also recreatable. So, they need not be pushed into github. 
+
+- To build our app in production environment, we can use the command "npx parcel build index.html"
+
+- We can also add browserslist, which determines the list of browsers by which the app is supported by. 
 
