@@ -28,3 +28,22 @@
 
   JSX (Babel converts to) => createElement => JS object => converted to HTML element on rendering
   Both are the same in the browser level. 
+
+
+# React Components
+
+1. Class based components -> Old -> Created using JS classes
+2. Functional components -> Latest -> Created using JS functions
+
+# Functional components
+
+- Functional components are nothing but JavaScript functions, that returns JSX  code, which is react element.
+- Name of any component should start with an uppercase
+- Simple components can be written without a return statement.
+- Components can be rendered using angular brackets <component_name /> 
+- One component canbe put inside another in the same way using angular brackets. 
+- This process is called component composition
+- Any number of components can be put inside other components. 
+- Any piece of JS code can be put inside components using {}. Any piece of Javascript...🚀
+- Any code put inside {} inside JSX is sanitized for any malicious attacks. This is Cross site scripting
+
