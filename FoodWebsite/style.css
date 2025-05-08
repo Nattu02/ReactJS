@@ -40,7 +40,9 @@
 
 .res-card{
     border: 1px solid black;
-    padding: 8px;
+    /* padding: 8px; */
+    width: 300px;
+    /* height: 400px; */
     margin: 10px 15px;
     align-items: center;
     text-align: center;
@@ -54,8 +56,30 @@
 .res-container{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 70px;
+    
 }
 
 .res-img{
-    width: 250px;
+    width: 280px;
+    cursor: pointer;
+    height: 240px;
+    margin: 10px;
+}
+
+.footer{
+    height: 40px;
+    width: 100%;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+}
+
+.filter-btn{
+    padding: 10px 10px;
+    margin: 10px 20px; 
+    cursor: pointer;
 }
