@@ -12,7 +12,7 @@
 .nav-items{
     display: flex;
     align-items: center;
-    margin: 0 100px;
+    margin: 0 70px;
 }
 
 .nav-items > ul{
@@ -70,7 +70,7 @@
 
 .footer{
     height: 40px;
-    width: 100%;
+    /* width: 100%; */
     background: #f0f0f0;
     display: flex;
     justify-content: center;
@@ -83,3 +83,36 @@
     margin: 10px 20px; 
     cursor: pointer;
 }
+
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 120px 70px;
+}
+
+.shimmer-cards{
+    width: 300px;
+    height: 410px;
+    background-color: #e9e9ea;
+    margin: 10px 15px;
+    padding-top: 10px;
+}
+
+.login-btn{
+    height: 50px;
+    width: 120px;
+    margin: auto;
+    background: #e9f1f4;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-family: cursive;
+    font-size: 18px;
+}
+
+.login-btn:hover{
+    background-color:#f0f0f0;
+}
+
+
