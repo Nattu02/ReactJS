@@ -49,4 +49,22 @@ Whenever a state variable changes, react triggers the reconciliation algorithm a
         2. inside conditions (if...else)
         3. inside loops (for, while)
         Else, these will cause inconsistencies. 
-- 
+
+# Routing in react
+
+ **npm install react-router** 
+ **import {CreateBrowserRouter, RouterProvider} from "react-router";** 
+
+ - First of all, routing configurations should be created using **CreateBrowserRouter**. Routing configuration is done by creating a list of objects representing the paths and components. 
+ - Children routes can also be given as a list of objects, similar to other routes.  
+ - To display the error page/component, **errorElement** is the parameter used to map with the error component inside routes.
+
+# Link component
+- It is not advised to use anchor tag in react applications as they cause the entire page to reload on clicking the anchor tag. 
+- Instead, we can use **<Link>** component from react-router to link the buttons to routes. **<Link>** is similar to anchor tags, but it only routes to the desired page, without reloading the entire page. 
+
+# Routing in web apps
+
+There are two types of routing in web apps
+1. Client side routing - All the components are already loaded into the webside, and UI changes when the route changes. 
+2. Server side routing - Make a network call, and the page comes from server and reloads the entire website.
