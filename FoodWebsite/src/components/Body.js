@@ -1,17 +1,15 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-import Menu from "./Menu";
 import { Link } from "react-router";
+import useRestaurantList from "../utils/useRestaurantList";
 
 const Body = () => {
   const [restaList, setRestaList] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  useEffect(() => {
-    getData();
-  }, []);
+  useEffect(()=>{getData()}, [])
 
   const getData = async () => {
     const data = await fetch(
@@ -26,10 +24,6 @@ const Body = () => {
     );
   };
 
-  // Conditional rendering
-  // if (restaList.length === 0) {
-  //   return <Shimmer />;
-  // }
 
   return restaList.length === 0 ? (
     <Shimmer />
