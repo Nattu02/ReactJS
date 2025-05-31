@@ -108,3 +108,14 @@ There are two types of routing in web apps
 
 - All of these are same, but have different terminologies. To breakdown the app into samller chunks. 
 
+
+
+# Different ways of writing CSS to our application
+
+- Normal CSS in a separate file
+- SASS ans SCSS
+- Component styling
+- Material UI
+- Bootstrap
+- Chakra UI
+- Tailwind CSS

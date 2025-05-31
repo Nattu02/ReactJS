@@ -9,7 +9,9 @@ const Body = () => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  useEffect(()=>{getData()}, [])
+  useEffect(() => {
+    getData();
+  }, []);
 
   const getData = async () => {
     const data = await fetch(
@@ -24,23 +26,23 @@ const Body = () => {
     );
   };
 
-
   return restaList.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="search">
+    <div>
+      <div className="flex items-center justify-center">
+        <div className="m-8">
         <input
           type="text"
-          placeholder="Search a restaurant.."
-          className="search-input"
+          placeholder="Search a restaurant..."
+          className="border-2 border-gray-400 p-2 rounded-lg"
           onChange={(e) => {
             setSearchText(e.target.value);
           }}
           value={searchText}
         ></input>
         <button
-          className="search-btn"
+          className="m-4 bg-green-100 px-4 py-2 rounded-lg cursor-pointer"
           onClick={() => {
             let searchResult = restaList.filter((res) =>
               res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -53,9 +55,9 @@ const Body = () => {
         </button>
       </div>
 
-      <div className="filter">
+      <div>
         <button
-          className="filter-btn"
+          className="m-4 bg-green-100 px-4 py-2 rounded-lg cursor-pointer"
           onClick={() => {
             let filteredList = restaList.filter(
               (res) => res.info.avgRating > 4.5
@@ -66,7 +68,8 @@ const Body = () => {
           Top Rated
         </button>
       </div>
-      <div className="res-container">
+      </div>
+      <div className="grid grid-cols-4 gap-10 mx-10  p-10">
         {filteredRestaurant.map((restaurant) => (
           <Link key={restaurant.info.id} to={"/restaurants/"+restaurant.info.id}><RestaurantCard  resData={restaurant} /></Link>
         ))}
@@ -76,3 +79,4 @@ const Body = () => {
 };
 
 export default Body;
+

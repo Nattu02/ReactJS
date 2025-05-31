@@ -9,37 +9,39 @@ const Header = () => {
   const onlineStatus = useOnline();
 
   return (
-    <div className="header">
-      <div className="logo-container">
-        <img src={LOGO_URL} className="logo" alt="Logo"></img>
-        <h2 className="title">ClickBite</h2>
+    <div className="flex justify-between items-center border-2 border-gray-300 bg-green-50">
+      <div className="flex justify-center items-center">
+        <img src={LOGO_URL} className="h-30" alt="Logo"></img>
+        <h2 className="text-3xl text-amber-500 italic font-bold -ml-8 ">
+          ClickBite
+        </h2>
       </div>
-      <div className="nav-items">
-        <ul>
-          <li className="links">
+      <div>
+        <ul className="flex items-center mx-4">
+          <li className="px-5 text-xl font-bold">
             <Link to="/">Home</Link>
           </li>
-          <li className="links">
+          <li className="px-5 text-xl font-bold">
             <Link to={"/about"}>About</Link>
           </li>
-          <li className="links">
+          <li className="px-5 text-xl font-bold">
             <Link to={"/contact"}>Contact</Link>
           </li>
-          <li>Cart</li>
-          <li className="links">
-            {/* <Link to="/grocery">Grocery</Link> */}
-          </li>
-          <button
-            className="login-btn"
-            onClick={() => {
-              logstatus === "Login"
-              ? setLogstatus("Logout")
-              : setLogstatus("Login");
-            }}
+          <li className="px-5 text-xl font-bold">Cart</li>
+          <li className="text-xl font-bold px-3 py-1 border-2 border-gray-600 rounded-lg">
+            <button
+              onClick={() => {
+                logstatus === "Login"
+                  ? setLogstatus("Logout")
+                  : setLogstatus("Login");
+              }}
             >
-            {logstatus}
-          </button>
-            <li>User status: {(onlineStatus) ? "🟢" : "🔴"}</li>
+              {logstatus}
+            </button>
+          </li>
+          <li className="px-5 text-xl font-bold">
+            User status: {onlineStatus ? "🟢" : "🔴"}
+          </li>
         </ul>
       </div>
     </div>

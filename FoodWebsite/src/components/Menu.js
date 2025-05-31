@@ -20,15 +20,15 @@ const Menu = () => {
 
   return (
     <div className="menu">
-      <div className="res-info">
-        <h1>{name}</h1>
-        <h2>{areaName}</h2>
+      <div className="mx-auto my-8 p-5 w-4/12 flex flex-col items-center border-2 rounded-xl">
+        <h1 className="m-2 font-bold text-2xl">{name}</h1>
+        <h2 className="m-2 font-medium text-xl">{areaName}</h2>
         <h2>
           ⭐{avgRatingString} ({totalRatingsString})
         </h2>
       </div>
 
-      <div className="menulist">
+      <div className="p-10 bg-amber-50 flex flex-col items-center">
         {itemCards.map((item) => {
           return <Dish key={item.card.info.id} dishlist={item} />;
         })}
