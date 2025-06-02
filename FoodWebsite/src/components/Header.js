@@ -9,7 +9,7 @@ const Header = () => {
   const onlineStatus = useOnline();
 
   return (
-    <div className="flex justify-between items-center border-2 border-gray-300 bg-green-50">
+    <div className="sticky top-0 right-0 left-0 flex justify-between items-center border-2 border-gray-300 bg-green-50">
       <div className="flex justify-center items-center">
         <img src={LOGO_URL} className="h-30" alt="Logo"></img>
         <h2 className="text-3xl text-amber-500 italic font-bold -ml-8 ">

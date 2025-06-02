@@ -7,7 +7,7 @@ const RestaurantCard = (props) => {
     resData.info;
 
   return (
-    <div className="h-[380px] border-2 p-2.5 flex-col items-center rounded-2xl bg-amber-100">
+    <div className="h-[380px] p-2.5 flex-col items-center rounded-2xl bg-green-50">
       <div className="flex justify-center">
         <img
           className="w-[280px] h-[200px] rounded-2xl"
@@ -24,6 +24,19 @@ const RestaurantCard = (props) => {
       </div>
     </div>
   );
+};
+
+export const TopRatedRestaurant = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div className="relative">
+        <label className="absolute top-2 left-2 px-2 py-1.5 bg-red-500 text-white font-bold rounded-md shadow">
+          Top rated
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default RestaurantCard;

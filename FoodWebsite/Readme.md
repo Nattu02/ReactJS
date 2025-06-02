@@ -119,3 +119,33 @@ There are two types of routing in web apps
 - Bootstrap
 - Chakra UI
 - Tailwind CSS
+
+
+# Higher order components
+
+- These are functions that takes a component as input and returns a component as output. 
+- The returned component is the enhanced version of the input component. 
+- The HOC is defined and exported in the same component which is passed as an argument. 
+- This can be imported as a named import in the caller component.
+- After imported, a new component is created by passing a component. **const NewComponent = HOC(ExistingComponent)**
+
+# Layers in react application
+
+- There aer two layers in a react application.
+- **UI layer** and **Data layer**
+- UI layer maintains the JSX codes to display the static content in the webpage. 
+- Data layer manages all the states, variables, functions, and other things in a component. 
+- UI layer is powered by the data from the data layer. 
+
+# Controlled and uncontrolled components
+
+- Controlled components are components, which are controlled by its parent component. 
+- For example, in this project, if the component showing the list of items is having its own state and managed the expanding and collapsing of list, parent component has no control over it. This is **Undontrolled component**.
+- Instead, if the parent componenet sends a variable to manage the expanding and collapsing of list items and the child component responds accordingly, this is called controlled components. 
+
+# Lifting the state up
+
+- If a state is to be shared between parent and the children components, that can be done with the help of the concept called **Lifting the state up**.
+- Here, the state in the child component is deleted first.
+- And then the state is created in parent component and send to child as a **props**. 
+- The state in the parent component can be modified by the child component by an event handler function. At the same time, the function to modify the state is also sent as a props to the children component. 

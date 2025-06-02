@@ -15,7 +15,7 @@ const useRestaurantInfo = (id) => {
     setResInfo(json);
   };
 
-  console.log(resInfo);
+  // console.log(resInfo);
   return resInfo;
 };
 
