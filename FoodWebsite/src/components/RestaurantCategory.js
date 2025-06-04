@@ -11,7 +11,7 @@ const RestaurantCategory = (props) => {
   const setShowIndex = props.setShowIndex;
 
   return (
-    <div className="w-3/5 my-2 p-4 flex flex-col items-center border-b-5 border-gray-200">
+    <div className="w-3/5 shadow-gray-900 p-4 flex flex-col items-center ">
       <div
         className="w-full flex justify-between py-2.5 px-5 bg-gray-200 rounded-lg cursor-pointer"
         onClick={() => {

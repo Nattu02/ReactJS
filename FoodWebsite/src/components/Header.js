@@ -1,20 +1,31 @@
 import { LOGO_URL } from "../utils/constants";
-import { use, useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router";
 import useOnline from "../utils/useOnline";
+import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [logstatus, setLogstatus] = useState("Login");
 
   const onlineStatus = useOnline();
 
+  const name = useContext(UserContext);
+  const { userName } = name;
+
+  const cart = useSelector((store) => store.cart.items);
+  console.log(cart);
+
   return (
-    <div className="sticky top-0 right-0 left-0 flex justify-between items-center border-2 border-gray-300 bg-green-50">
+    <div className="sticky top-0 right-0 left-0 z-10 flex justify-between items-center border-2 border-gray-300 bg-green-50">
       <div className="flex justify-center items-center">
         <img src={LOGO_URL} className="h-30" alt="Logo"></img>
-        <h2 className="text-3xl text-amber-500 italic font-bold -ml-8 ">
-          ClickBite
-        </h2>
+        <Link
+          to="/"
+          className="text-3xl text-green-500 italic font-bold -ml-8 cursor-pointer"
+        >
+          Savoura
+        </Link>
       </div>
       <div>
         <ul className="flex items-center mx-4">
@@ -27,7 +38,9 @@ const Header = () => {
           <li className="px-5 text-xl font-bold">
             <Link to={"/contact"}>Contact</Link>
           </li>
-          <li className="px-5 text-xl font-bold">Cart</li>
+          <li className="px-5 text-xl font-bold">
+            <Link to={"/cart"}>🛒 - {cart.length}</Link>
+          </li>
           <li className="text-xl font-bold px-3 py-1 border-2 border-gray-600 rounded-lg">
             <button
               onClick={() => {
@@ -40,7 +53,11 @@ const Header = () => {
             </button>
           </li>
           <li className="px-5 text-xl font-bold">
-            User status: {onlineStatus ? "🟢" : "🔴"}
+            {logstatus === "Logout" ? userName : ""}
+          </li>
+
+          <li className="px-5 text-xl font-bold">
+            {onlineStatus ? "✅" : "❌"}
           </li>
         </ul>
       </div>

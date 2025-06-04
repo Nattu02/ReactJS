@@ -149,3 +149,64 @@ There are two types of routing in web apps
 - Here, the state in the child component is deleted first.
 - And then the state is created in parent component and send to child as a **props**. 
 - The state in the parent component can be modified by the child component by an event handler function. At the same time, the function to modify the state is also sent as a props to the children component. 
+
+# useContext hook
+
+- To use a variable in a global level (ie: In any of the components of the application), a context can be created.
+- To do that we can use create a context by using **createContext** from react. 
+- Any type of variable can be created using createContext.
+- This can also be exported as default. 
+- This can be imported from corresponding directory, and can be used with the help of the hook **useContxt**.
+- import userContext from "./utils/userContext";
+- const userName = useContext(userContext);
+- Specific values can be given to the context variables by using **state** and **Provider** components. 
+- The components can be wrapped inside the **Provider** and the values can be passed. 
+
+
+# Different types of function calls 
+
+- onClick={() => handleAddItems(dishlist.card.info)} => Here, a callback function is created and the handleAddItems function is called only when the button is clicked. 
+- onClick = {handleAddItems(dishlist.card.info)} => This calls the function at the time of rendering itself. And the result of the function call is passed to the onClick and nothing happens here on the button click. 
+- onClick = {handleAddItems} => This is preferred when there is no arguments passed to the function. Similar to the first one, calls the function once the button is clicked. 
+
+# Redux 
+
+- Redux is a state management library
+- Redux and React are two different libraries, that are installed separately
+- There are other state management libraries like Redux. Zustand is one of the examples. 
+- Redux offers easy debugging. 
+
+# How redux works?
+
+- **Redux store** - A large central javascript object, that contains data which can be accessed from any of the components in the application. This data can be read or modified from any of the components. 
+- **Slice** - Inside redux store, there are smaller portions for each functionality, (carts, userInfo, themes, etc.) and these are called slices. 
+- **Dispatch (Action)** - When the add button is clicked, it **dispatch an action**, which calls a **reducer function**, and this reducer function will modify the data in the slice. 
+- **Selector** - To read data from the slice, there is a thing called **selector**. This means that the component in the UI is **subscribing to the store**. This means, whenever the data in the store changes, the UI component updated automatically. 
+
+## ADD button clicked => Dispath (Action) => Reducer function => modify/update the slice in the store => Selector (subscribing to the store) => UI component gets updated
+
+
+# Points to remember in Redux
+
+  ## It is important to use correct selector to prevent performance issues. 
+  - The selector should be specific to the requirements. 
+  - If the cart items are needed to be read, the selector should be like this. => const cart = useSelector((store) => store.cart.items)
+  - The above can also be written as const store = useSelector((store) => store)  => const cart = store.cart.items
+  - The second one is not recommended, as it will cause unwanted performance issues. 
+  - Any achange in any of the store variables will affect the component in which the selector is written like this. 
+  - So, it is mandatory to be specific while writing selectors. 
+
+
+## Difference between **reducer** and **reducers**
+  - Redux store has a one big reducer that contains all the slices. **(Reducer)**
+  - Each slice has multiple small reducers that is an object of actions which are mapped with reducer functions. **(Reducers)**
+
+## Mutate the state in **Vanilla redux** and **Redux toolkit**
+- In older redux, **(Vanilla redux)** states are immutable. They cannot be mutated.
+- To modify a state, a copy of it should be created and the copy should be modified and returned.
+- It is mandatory to return a state in older redux. 
+
+- But in new redux **(Redux toolkit)**, we have to mutate the state. 
+- Returning a state is not mandatory here. 
+- The process of mutating the state is done by the redux using the **Immer** library. 
+

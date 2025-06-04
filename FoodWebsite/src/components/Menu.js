@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import useRestaurantInfo from "../utils/useRestaurantInfo";
 import RestaurantCategory from "./RestaurantCategory";
 
+
 const Menu = () => {
   const { id } = useParams();
 

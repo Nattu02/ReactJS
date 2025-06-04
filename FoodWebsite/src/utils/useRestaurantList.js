@@ -13,7 +13,7 @@ const useRestaurantList = () => {
     const json = await data.json();
     setResList(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
   };
-  console.log(resList);
+  // console.log(resList);
 
   return resList;
 };
