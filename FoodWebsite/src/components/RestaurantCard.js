@@ -13,7 +13,7 @@ const RestaurantCard = (props) => {
     resData.info;
 
   return (
-    <div className="h-[380px] p-2.5 flex-col items-center rounded-2xl bg-green-50">
+    <div data-testid="resCard" className="h-[380px] p-2.5 flex-col items-center rounded-2xl bg-green-50 hover:shadow-md shadow-gray-400">
       <div className="flex justify-center">
         <img
           className="w-[280px] h-[200px] rounded-2xl"

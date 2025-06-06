@@ -24,6 +24,7 @@ const Body = () => {
       <div className="flex items-center justify-center">
         <div className="m-8">
           <input
+            data-testid="searchInput"
             type="text"
             placeholder="Search a restaurant..."
             className="border-2 border-gray-400 p-2 rounded-lg"
@@ -47,6 +48,7 @@ const Body = () => {
 
         <div>
           <button
+            data-testid="topRatedBtn"
             className="m-4 bg-green-100 px-4 py-2 rounded-lg cursor-pointer"
             onClick={() => {
               let filteredList = resList.filter(

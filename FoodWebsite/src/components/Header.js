@@ -14,10 +14,10 @@ const Header = () => {
   const { userName } = name;
 
   const cart = useSelector((store) => store.cart.items);
-  console.log(cart);
+  // console.log(cart);
 
   return (
-    <div className="sticky top-0 right-0 left-0 z-10 flex justify-between items-center border-2 border-gray-300 bg-green-50">
+    <div className="h-25 opacity-95 sticky top-0 right-0 left-0 z-10 flex justify-between items-center border-2 border-gray-300 bg-green-50">
       <div className="flex justify-center items-center">
         <img src={LOGO_URL} className="h-30" alt="Logo"></img>
         <Link

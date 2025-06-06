@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import Dish, { dishInCart } from "./Dish";
-import { clearCart, removeItems } from "../utils/cartSlice";
+import { clearCart } from "../utils/cartSlice";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
@@ -11,8 +11,6 @@ const Cart = () => {
   const handleClearCart = () => {
     dispatch(clearCart());
   };
-
- 
 
   const CartItem = dishInCart(Dish);
 

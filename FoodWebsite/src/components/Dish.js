@@ -14,7 +14,7 @@ const Dish = (props) => {
   };
 
   return (
-    <div className="flex justify-between items-start p-5 m-5 border border-gray-200 rounded-2xl shadow-sm w-full">
+    <div data-testid="dish" className="flex justify-between items-start p-5 m-5 border border-gray-200 rounded-2xl shadow-sm w-full">
       <div className="flex flex-col gap-2 w-3/4">
         <div className="font-semibold text-lg">
           {name} {isVeg ? "🟢" : "🔺"}
