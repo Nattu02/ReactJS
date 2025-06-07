@@ -26,6 +26,7 @@ const Cart = () => {
         Items in your cart!!!
       </h1>
       <div
+      data-testid="clrBtn"
         className="ml-auto mr-4 p-2 w-fit bg-gray-500 text-white font-bold text-xl cursor-pointer rounded-xl"
         onClick={() => handleClearCart()}
       >

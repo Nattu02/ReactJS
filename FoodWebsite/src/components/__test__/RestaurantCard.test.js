@@ -69,3 +69,4 @@ test("render top rated properly", async () => {
 
   expect(resCards.length).toBe(5);
 });
+ 
